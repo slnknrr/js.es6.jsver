@@ -1,5 +1,9 @@
 # js.es6.jsver
 Tests or returns the JavaScript version by (ECMAScript) starting with ES2. (MIT license)
+## Why 'js.**es6**.jsver' when 'starting with ES2'? ##
+- jsver() support ES2+ (index.js#jsver())
+- jsvero() support ES6+ and requires jsver()
+- jsver.js in **Releases** uses ES6+ code for `module:main` with `jsvero()` and can be uses from web-browser, node (interactive, command-line and require(), eval);
 
 ## Examples ##
 ```JavaScript
@@ -8,21 +12,24 @@ const { jsvero } = require('jsver'); //const jsvero = require('jsver').jsvero //
 ```
 
 ## `jsver` vs `jsvero` ##
-jsvero: returns Object and written for ES6+
-jsver: returns Object<Array> and written for ES2+
+jsvero: returns Object{} and written for ES6+
+jsver: returns Object[] and written for ES2+
 
 ```JavaScript
-jsvero().name = jsver()[2]
-jsvero().ver = jsver()[0]
-jsvero().year = jsver()[1]
-jsvero().best = jsver(true);
+jsvero().name == jsver()[2];
+jsvero().ver == jsver()[0];
+jsvero().year == jsver()[1];
+jsvero().best == jsver(true); //is best version that jsver() known?
 ```
 ## Params ##
 ```JavaScript
 jsver(6) //(jsvero().ver==jsver(6));
+jsver(2023) //(jsvero().year==2023)
 jsver('ECMAScript 2023') //(jsvero().name=='ECMAScript 2023');
 jsver(false) //or jsver('false') //is latest JavaScript? (false)->yes=>false|no->true or (true)->yes->true|no->false
+jsver() //returns [in_standard_ver,standard_year,standard_name];
 ```
+see jsver docstring
 `jsver` and `jsvero` params is equal
 
 ## Recepies ##
@@ -41,7 +48,7 @@ if (jsver()[0]!=4) {
 ```
 
 ```JavaScript
-if (require('jsver').jsvero()<6) {
+if (jsvero()<6) {
   console.log('this script requires ES6+ support');
   process.exit(0);
 }
