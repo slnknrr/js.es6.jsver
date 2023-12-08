@@ -1,0 +1,39 @@
+{
+  "name": "jsver",
+  "version": "1.0.0",
+  "description": "Tests or returns the JavaScript version by (ECMAScript) starting with ES2.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slnknrr/js.es6.jsver.git"
+  },
+  "keywords": [
+    "ecmascript",
+    "javascript",
+	"version",
+    "es2",
+    "es3",
+    "es4",
+    "es5",
+    "es6",
+    "es7",
+    "es8",
+    "es9",
+    "es10",
+    "es11",
+    "es12",
+    "es13",
+    "es14",
+    "js",
+    "ver"
+  ],
+  "author": "Yuriyi `niknils` Slinkin <slnknrr.github.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slnknrr/js.es6.jsver/issues"
+  },
+  "homepage": "https://github.com/slnknrr/js.es6.jsver#readme"
+}
